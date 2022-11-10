@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraScreenResolution : MonoBehaviour
@@ -7,11 +5,8 @@ public class CameraScreenResolution : MonoBehaviour
     [SerializeField] private CameraMove cameraMove;
     [SerializeField] private ResolutionManager resolutionManager;
 
-    private float ratioMultiplier;
-
     private void Awake()
     {
-        CalculateRatioMultiplier(Screen.width, Screen.height);
         cameraMove.CalculateMoveRange(Screen.width, Screen.height);
 
         SetupCameraSize(Screen.width, Screen.height);
@@ -23,7 +18,6 @@ public class CameraScreenResolution : MonoBehaviour
     {
         SetupCameraSize(e.resolution.width, e.resolution.height);
         cameraMove.GetCameraHandler().SetPosition(new Vector3(0f, 0f, -100f));
-        CalculateRatioMultiplier(Screen.width, Screen.height);
         cameraMove.CalculateMoveRange(Screen.width, Screen.height);
         cameraMove.CalculateMaxDownPositionResized();
     }
@@ -46,13 +40,6 @@ public class CameraScreenResolution : MonoBehaviour
                 cameraMove.GetCameraHandler().SetOrthographicSize(5f);
                 break;
         }
-    }
-
-    private void CalculateRatioMultiplier(float width, float height)
-    {
-        float w = width;
-        float h = height;
-        ratioMultiplier = w / h;
     }
 
     private float GetOrthographicSize(float screenWidth, float screenHeight)
