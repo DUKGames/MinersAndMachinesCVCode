@@ -56,7 +56,7 @@ public class UILands : MonoBehaviour
 
     private void ButtonRankingsImageMouse_OnMouseEnter(object sender, ImageMouse.OnMouseEnterArgs e)
     {
-        if (e.isMouseEnter)
+        if (e.isMouseOnImage)
         {
             TriggerButtonRankingsAnimator(true);
         }

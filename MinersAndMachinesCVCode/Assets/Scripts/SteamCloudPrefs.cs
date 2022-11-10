@@ -25,7 +25,7 @@ public class SteamCloudPrefs
     public int BedrockAchievementStatus { get; set; }
     public int ProsperityAchievementStatus { get; set; }
     public int AddedMailsCount { get; set; }
-    public Languages.LanguageType ActualLanguage { get; set; }
+    public Language.LanguageType ActualLanguage { get; set; }
     public Dictionary<Lands.LandType, int> LandParcelsDoneAchievement { get; set; }
     public Dictionary<string, int> ParcelProfit { get; set; }
     public Dictionary<Lands.LandType, int> LandState { get; set; }
